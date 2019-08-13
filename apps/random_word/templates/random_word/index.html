@@ -27,6 +27,11 @@
                     {% csrf_token %}
                 <input class="btn btn-primary mt-5" type="submit" name="Check_time" value="Check Out the Time"/>
                 </form>
+
+                <form action="/reset" method="POST">
+                    {% csrf_token %}
+                <input class="btn btn-primary mt-5" type="submit" name="Check_time" value="Reset Counter"/>
+                </form>
             </div>
             <div class="col"></div>
         </div>

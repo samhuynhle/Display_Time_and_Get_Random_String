@@ -18,3 +18,8 @@ def process(request):
 def setsession(request):
     request.session['counting'] = 0
     request.session['random_string'] = get_random_string(length=14)
+    return redirect("/")
+
+def reset(request):
+    request.session['counting'] = 0
+    return redirect('/')
