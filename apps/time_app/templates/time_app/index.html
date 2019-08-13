@@ -13,9 +13,14 @@
         <div class="row mb-5"></div>
         <div class="row">
             <div class="col"></div>
-            <div class = "col-4 text-center m2 py-2 bg-secondary text-light">
+            <div class = "col-4 text-center m2 py-2 bg-light text-dark">
                 <h3>Current Date and Time:</h3>
-                <h3>{{time}}</h3>   
+                <h3>{{time}}</h3>
+                
+                <form action="/" method="GET">
+                    {% csrf_token %}
+                <input class="btn btn-primary mt-5" type="submit" name="Check_time" value="Go to Random String"/>
+                </form>
             </div>
             <div class="col"></div>
         </div>

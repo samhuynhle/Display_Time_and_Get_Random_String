@@ -4,13 +4,14 @@ from django.utils.crypto import get_random_string
 # Create your views here.
 def index(request):
     if 'counting' in request.session:
-        request.session['counting'] += 1
+        print('hello')
     else: 
         setsession(request)
     return render(request,'random_word/index.html')
 
 def process(request):
     if request.method == "POST":
+        request.session['counting'] += 1
         request.session['random_string'] = get_random_string(length=14)
         return redirect("/")    
 

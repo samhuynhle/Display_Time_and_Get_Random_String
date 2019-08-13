@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Time Display</title>
+        <title>Get Random Number</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         {% load static %}
@@ -13,15 +13,20 @@
         <div class="row mb-5"></div>
         <div class="row">
             <div class="col"></div>
-            <div class = "col-4 text-center m2 py-2 bg-secondary text-light">
+            <div class = "col-4 text-center m2 py-2 bg-light text-dark">
                 <h6># of strings generated: {{request.session.counting}}</h6>
                 <h3>Random String: </h3>
                 <h3>{{request.session.random_string}}</h3>   
 
                 <form action="/process" method="POST">
                     {% csrf_token %}
-                    <input type="submit" name="get_random" value="Get Random String"/>
+                    <input class="btn btn-primary mt-5"  type="submit" name="get_random" value="Get Random String"/>
                   </form>
+
+                <form action="/time_display" method="GET">
+                    {% csrf_token %}
+                <input class="btn btn-primary mt-5" type="submit" name="Check_time" value="Check Out the Time"/>
+                </form>
             </div>
             <div class="col"></div>
         </div>
